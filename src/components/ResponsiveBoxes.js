@@ -18,6 +18,13 @@ const ResponsiveBoxes = () => {
 
   return (
     <div>
+      <div className="flex justify-center items-center my-4">
+        {hasSelectedBoxes && (
+          <Link href="/feed" className="bg-yellow-500 text-white py-4 px-8 rounded-xl text-3xl cursor-pointer">
+            Go to Feed
+          </Link>
+        )}
+      </div>
       <div className="flex flex-wrap h-[60vh] relative">
         {boxTexts.map((text, index) => (
           <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3 p-4">
@@ -31,13 +38,6 @@ const ResponsiveBoxes = () => {
             </div>
           </div>
         ))}
-      </div>
-      <div className="flex justify-center items-center mt-16">
-        {hasSelectedBoxes && (
-          <Link href="/feed" className="bg-yellow-500 text-white py-4 px-8 rounded-xl text-3xl cursor-pointer">
-            Go to Feed
-          </Link>
-        )}
       </div>
     </div>
   );
